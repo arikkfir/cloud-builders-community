@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/bash-curl-jq', '.']
+
+- # Verify curl has been built correctly
+  name: 'gcr.io/$PROJECT_ID/bash-curl-jq'
+  entrypoint: 'curl'
+  args: ['--version']
+- # Verify jq has been built correctly
+  name: 'gcr.io/$PROJECT_ID/bash-curl-jq'
+  entrypoint: 'jq'
+  args: ['--version']
+
+images: ['gcr.io/$PROJECT_ID/bash-curl-jq']

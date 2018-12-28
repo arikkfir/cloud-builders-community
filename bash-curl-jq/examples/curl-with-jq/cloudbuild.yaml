@@ -1,0 +1,3 @@
+steps:
+- name: "gcr.io/$PROJECT_ID/bash-curl-jq"
+  args: ["curl --silent --show-error --location https://jsonplaceholder.typicode.com/todos/1 | jq -r '.title'"]
